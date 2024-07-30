@@ -1,5 +1,5 @@
 const redux = require("redux");
-const createStore = redux.createStore;
+const createStore = redux.legacy_createStore;
 const BUY_CAKE = "BUY_CAKE";
 
 // buyCake is a "creator action".
@@ -18,7 +18,7 @@ const initialState = {
 };
 const reducer = (state = initialState, action) => {
   if (action.type === BUY_CAKE) {
-    return { ...state, numOfCake: state.numOfCake - 1 };
+    return { ...state, numOfCake: state.numOfCake + 1 };
   } else {
     return state;
   }
